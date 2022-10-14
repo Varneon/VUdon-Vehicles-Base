@@ -1,10 +1,11 @@
 {
-    "name": "Varneon.VUdon.RepositoryTemplate.Runtime",
+    "name": "Varneon.VUdon.Vehicles-Base.Editor",
     "references": [
-        "UdonSharp.Runtime",
-        "VRC.Udon"
+        "Varneon.VUdon.Vehicles-Base.Runtime"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
