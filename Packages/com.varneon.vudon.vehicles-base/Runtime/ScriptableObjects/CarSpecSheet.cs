@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 
 namespace Varneon.VUdon.VehiclesBase.DataPresets
 {
+    [HelpURL("https://github.com/Varneon/VUdon-Vehicles-Base/wiki/Car-Spec-Sheet")]
     [CreateAssetMenu(menuName = "VUdon - Vehicles/Data Presets/Car Spec Sheet", fileName = "NewCarSpecSheet.asset", order = 100)]
     public class CarSpecSheet : ScriptableObject
     {
