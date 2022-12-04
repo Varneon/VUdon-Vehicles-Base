@@ -20,6 +20,8 @@ namespace Varneon.VUdon.VehiclesBase.DataPresets.Editor
             YearFieldContent = new GUIContent("Year", "Production year of the car"),
             WeightFieldContent = new GUIContent("Weight", "Default operational weight of the car"),
             TopSpeedFieldContent = new GUIContent("Top Speed", "Top speed of the car (km/h)"),
+            IdleRPMFieldContent = new GUIContent("Idle RPM", "Idle RPM of the engine"),
+            MaxRPMFieldContent = new GUIContent("Max RPM", "Max RPM of the engine"),
             MaxEngineTorqueFieldContent = new GUIContent("Max Engine Torque", "Maximum torque of the engine in Nm"),
             EngineTorqueCurveFieldContent = new GUIContent("Engine Torque Curve", "Normalized torque curve of the engine"),
             GearCountFieldContent = new GUIContent("Gear Count", "Number of forward gears"),
@@ -65,6 +67,10 @@ namespace Varneon.VUdon.VehiclesBase.DataPresets.Editor
                 specSheetData.Weight = EditorGUILayout.FloatField(WeightFieldContent, specSheetData.Weight);
 
                 specSheetData.TopSpeed = EditorGUILayout.FloatField(TopSpeedFieldContent, specSheetData.TopSpeed);
+
+                specSheetData.IdleRPM = EditorGUILayout.FloatField(IdleRPMFieldContent, specSheetData.IdleRPM);
+
+                specSheetData.MaxRPM = EditorGUILayout.FloatField(MaxRPMFieldContent, specSheetData.MaxRPM);
 
                 specSheetData.MaxEngineTorque = EditorGUILayout.FloatField(MaxEngineTorqueFieldContent, specSheetData.MaxEngineTorque);
 

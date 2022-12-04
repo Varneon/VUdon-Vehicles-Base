@@ -62,6 +62,16 @@ namespace Varneon.VUdon.VehiclesBase.DataPresets
             public float TopSpeed = 200f;
 
             /// <summary>
+            /// Idle RPM of the engine
+            /// </summary>
+            public float IdleRPM = 1000f;
+
+            /// <summary>
+            /// Max RPM of the engine
+            /// </summary>
+            public float MaxRPM = 7000f;
+
+            /// <summary>
             /// Maximum torque of the engine in Nm
             /// </summary>
             public float MaxEngineTorque = 400f;
