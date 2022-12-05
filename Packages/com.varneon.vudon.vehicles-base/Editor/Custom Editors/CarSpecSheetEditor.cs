@@ -153,6 +153,8 @@ namespace Varneon.VUdon.VehiclesBase.DataPresets.Editor
             if (specSheetData.EngineTorqueCurveKeyframes == null || specSheetData.EngineTorqueCurveKeyframes.Length == 0)
             {
                 engineTorqueCurve = new AnimationCurve(new Keyframe(0f, 0f), new Keyframe(0.5f, 1f), new Keyframe(1f, 0f));
+
+                specSheetData.EngineTorqueCurveKeyframes = engineTorqueCurve.keys;
             }
             else
             {
