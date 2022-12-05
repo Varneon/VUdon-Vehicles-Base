@@ -1,5 +1,8 @@
-﻿using UnityEngine;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 namespace Varneon.VUdon.VehiclesBase.DataPresets
 {
@@ -22,6 +25,28 @@ namespace Varneon.VUdon.VehiclesBase.DataPresets
         public static CarSpecSheetData FromJSON(string json)
         {
             return string.IsNullOrEmpty(json) ? new CarSpecSheetData() : JsonConvert.DeserializeObject<CarSpecSheetData>(json);
+        }
+
+        public static bool IsJSONValidCarSpecSheetData(string json)
+        {
+            if (string.IsNullOrEmpty(json)) { return false; }
+
+            try
+            {
+                JObject root = JObject.Parse(json);
+
+                if (root == null) { return false; }
+
+                HashSet<string> propertyNames = new HashSet<string>(root.Properties().Select(p => p.Name));
+
+                if (typeof(CarSpecSheetData).GetFields().Any(f => !propertyNames.Contains(f.Name))) { return false; }
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public string RawJsonData => rawJsonData;
