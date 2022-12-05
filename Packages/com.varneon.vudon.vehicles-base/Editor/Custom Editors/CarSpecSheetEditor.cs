@@ -150,6 +150,23 @@ namespace Varneon.VUdon.VehiclesBase.DataPresets.Editor
                         menu.ShowAsContext();
                     }
                 }
+                if (EditorGUILayout.DropdownButton(new GUIContent("Import", "Import CarSpecSheet from external data"), FocusType.Passive))
+                {
+                    GenericMenu menu = new GenericMenu();
+
+                    menu.AddItem(new GUIContent("Import from JSON file", "Imports a spec sheet from JSON file"), false, () => ImportSpecSheetFromJSON());
+
+                    if(CarSpecSheet.IsJSONValidCarSpecSheetData(EditorGUIUtility.systemCopyBuffer))
+                    {
+                        menu.AddItem(new GUIContent("Import from JSON in clipboard", "Imports a spec sheet from JSON"), false, () => ImportSpecSheetFromJSON(EditorGUIUtility.systemCopyBuffer));
+                    }
+                    else
+                    {
+                        menu.AddDisabledItem(new GUIContent("Import from JSON in clipboard", "Imports a spec sheet from JSON"));
+                    }
+
+                    menu.ShowAsContext();
+                }
             }
         }
 
@@ -169,6 +186,29 @@ namespace Varneon.VUdon.VehiclesBase.DataPresets.Editor
             {
                 engineTorqueCurve = new AnimationCurve(specSheetData.EngineTorqueCurveKeyframes);
             }
+        }
+
+        private void ImportSpecSheetFromJSON()
+        {
+            string path = EditorUtility.OpenFilePanel("Import CarSpecSheet from JSON", "", "json");
+
+            if(string.IsNullOrEmpty(path) || !File.Exists(path)) { return; }
+
+            string json;
+
+            using (StreamReader reader = new StreamReader(path))
+            {
+                json = reader.ReadToEnd();
+            }
+
+            ImportSpecSheetFromJSON(json);
+        }
+
+        private void ImportSpecSheetFromJSON(string json)
+        {
+            specSheet.Data = CarSpecSheet.FromJSON(json);
+
+            LoadSpecSheet();
         }
 
         private void ExportAsUnitypackage()
