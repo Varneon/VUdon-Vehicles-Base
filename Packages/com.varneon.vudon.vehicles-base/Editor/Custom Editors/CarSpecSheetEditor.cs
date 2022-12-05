@@ -42,6 +42,8 @@ namespace Varneon.VUdon.VehiclesBase.DataPresets.Editor
 
         private void OnDestroy()
         {
+            if(specSheet == null) { return; }
+
             specSheet.Data = specSheetData;
 
             EditorUtility.SetDirty(specSheet);
