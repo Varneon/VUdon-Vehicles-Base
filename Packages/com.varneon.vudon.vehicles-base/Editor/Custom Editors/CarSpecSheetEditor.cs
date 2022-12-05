@@ -83,7 +83,7 @@ namespace Varneon.VUdon.VehiclesBase.DataPresets.Editor
 
                 using (var gearCountChangedScope = new EditorGUI.ChangeCheckScope())
                 {
-                    specSheetData.GearCount = EditorGUILayout.IntField(GearCountFieldContent, specSheetData.GearCount);
+                    specSheetData.GearCount = EditorGUILayout.DelayedIntField(GearCountFieldContent, specSheetData.GearCount);
 
                     if (gearCountChangedScope.changed)
                     {
