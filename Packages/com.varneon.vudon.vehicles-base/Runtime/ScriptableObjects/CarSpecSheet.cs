@@ -11,12 +11,17 @@ namespace Varneon.VUdon.VehiclesBase.DataPresets
         {
             get
             {
-                return string.IsNullOrEmpty(rawJsonData) ? new CarSpecSheetData() : JsonConvert.DeserializeObject<CarSpecSheetData>(rawJsonData);
+                return FromJSON(rawJsonData);
             }
             set
             {
                 rawJsonData = JsonConvert.SerializeObject(value, Formatting.Indented);
             }
+        }
+
+        public static CarSpecSheetData FromJSON(string json)
+        {
+            return string.IsNullOrEmpty(json) ? new CarSpecSheetData() : JsonConvert.DeserializeObject<CarSpecSheetData>(json);
         }
 
         public string RawJsonData => rawJsonData;
