@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using System.IO;
+using UnityEditor;
 using UnityEngine;
 
 namespace Varneon.VUdon.VehiclesBase.DataPresets.Editor
@@ -140,8 +141,43 @@ namespace Varneon.VUdon.VehiclesBase.DataPresets.Editor
 
                         menu.ShowAsContext();
                     }
+                    else if (EditorGUILayout.DropdownButton(new GUIContent("Export", "Export the Car Spec Sheet"), FocusType.Passive))
+                    {
+                        GenericMenu menu = new GenericMenu();
+
+                        menu.AddItem(new GUIContent("Export CarSpecSheet as Unitypackage", "Exports the CarSpecSheet ScriptableObject as a Unitypackage"), false, () => ExportAsUnitypackage());
+
+                        menu.AddItem(new GUIContent("Save raw JSON to file", "Saves the raw JSON data from the spec sheet to a file"), false, () => SaveRawJSONToFile());
+
+                        menu.ShowAsContext();
+                    }
                 }
             }
+        }
+
+        private void ExportAsUnitypackage()
+        {
+            string path = EditorUtility.SaveFilePanel("Save CarSpecSheet as Unitypackage", "", string.Format("CarSpecSheet_{0}", specSheet.name), "unitypackage");
+
+            if (string.IsNullOrEmpty(path)) { return; }
+
+            AssetDatabase.ExportPackage(AssetDatabase.GetAssetPath(specSheet), path, ExportPackageOptions.Interactive);
+
+            AssetDatabase.Refresh();
+        }
+
+        private void SaveRawJSONToFile()
+        {
+            string path = EditorUtility.SaveFilePanel("Save CarSpecSheet data as JSON", "", string.Format("CarSpecSheet_{0}", specSheet.name), "json");
+
+            if (string.IsNullOrEmpty(path)) { return; }
+
+            using (StreamWriter writer = new StreamWriter(path))
+            {
+                writer.Write(specSheet.RawJsonData);
+            }
+
+            AssetDatabase.Refresh();
         }
     }
 }
