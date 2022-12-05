@@ -40,6 +40,13 @@ namespace Varneon.VUdon.VehiclesBase.DataPresets.Editor
             LoadSpecSheet();
         }
 
+        private void OnDestroy()
+        {
+            specSheet.Data = specSheetData;
+
+            EditorUtility.SetDirty(specSheet);
+        }
+
         public override void OnInspectorGUI()
         {
             using (var scope = new EditorGUI.ChangeCheckScope())
