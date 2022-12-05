@@ -37,18 +37,7 @@ namespace Varneon.VUdon.VehiclesBase.DataPresets.Editor
         {
             specSheet = (CarSpecSheet)target;
 
-            specSheetData = specSheet.Data;
-
-            if (specSheetData.GearRatios == null) { specSheetData.GearRatios = new float[specSheetData.GearCount]; }
-
-            if(specSheetData.EngineTorqueCurveKeyframes == null || specSheetData.EngineTorqueCurveKeyframes.Length == 0)
-            {
-                engineTorqueCurve = new AnimationCurve(new Keyframe(0f, 0f), new Keyframe(0.5f, 1f), new Keyframe(1f, 0f));
-            }
-            else
-            {
-                engineTorqueCurve = new AnimationCurve(specSheetData.EngineTorqueCurveKeyframes);
-            }
+            LoadSpecSheet();
         }
 
         public override void OnInspectorGUI()
@@ -152,6 +141,22 @@ namespace Varneon.VUdon.VehiclesBase.DataPresets.Editor
                         menu.ShowAsContext();
                     }
                 }
+            }
+        }
+
+        private void LoadSpecSheet()
+        {
+            specSheetData = specSheet.Data;
+
+            if (specSheetData.GearRatios == null) { specSheetData.GearRatios = new float[specSheetData.GearCount]; }
+
+            if (specSheetData.EngineTorqueCurveKeyframes == null || specSheetData.EngineTorqueCurveKeyframes.Length == 0)
+            {
+                engineTorqueCurve = new AnimationCurve(new Keyframe(0f, 0f), new Keyframe(0.5f, 1f), new Keyframe(1f, 0f));
+            }
+            else
+            {
+                engineTorqueCurve = new AnimationCurve(specSheetData.EngineTorqueCurveKeyframes);
             }
         }
 
