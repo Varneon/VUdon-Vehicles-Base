@@ -125,6 +125,23 @@ namespace Varneon.VUdon.VehiclesBase.DataPresets.Editor
                     fieldsDirty = false;
                 }
             }
+
+            using (new GUILayout.HorizontalScope())
+            {
+                using (new EditorGUI.DisabledScope(fieldsDirty))
+                {
+                    if (EditorGUILayout.DropdownButton(new GUIContent("Copy", "Copy the raw JSON data"), FocusType.Passive))
+                    {
+                        GenericMenu menu = new GenericMenu();
+
+                        menu.AddItem(new GUIContent("Copy raw JSON", "Copies the raw JSON to your clipboard"), false, () => EditorGUIUtility.systemCopyBuffer = specSheet.RawJsonData);
+
+                        menu.AddItem(new GUIContent("Copy raw JSON with code block formatting", "Copies the raw JSON to your clipboard with code block formatting (useful for displaying data in e.g. Discord, Markdown, etc.)"), false, () => EditorGUIUtility.systemCopyBuffer = string.Format("```json\n{0}\n```", specSheet.RawJsonData));
+
+                        menu.ShowAsContext();
+                    }
+                }
+            }
         }
     }
 }
