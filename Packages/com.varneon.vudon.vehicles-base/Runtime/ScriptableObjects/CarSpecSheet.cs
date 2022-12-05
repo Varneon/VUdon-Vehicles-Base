@@ -112,6 +112,11 @@ namespace Varneon.VUdon.VehiclesBase.DataPresets
             public Keyframe[] EngineTorqueCurveKeyframes;
 
             /// <summary>
+            /// Type of the transmission
+            /// </summary>
+            public TransmissionType TransmissionType = TransmissionType.Automatic;
+
+            /// <summary>
             /// Number of forward gears
             /// </summary>
             public int GearCount = 6;

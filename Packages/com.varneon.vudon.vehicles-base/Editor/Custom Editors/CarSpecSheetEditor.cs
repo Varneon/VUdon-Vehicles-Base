@@ -25,6 +25,7 @@ namespace Varneon.VUdon.VehiclesBase.DataPresets.Editor
             MaxRPMFieldContent = new GUIContent("Max RPM", "Max RPM of the engine"),
             MaxEngineTorqueFieldContent = new GUIContent("Max Engine Torque", "Maximum torque of the engine in Nm"),
             EngineTorqueCurveFieldContent = new GUIContent("Engine Torque Curve", "Normalized torque curve of the engine"),
+            TransmissionTypeFieldContent = new GUIContent("Transmission Type", "Type of the transmission"),
             GearCountFieldContent = new GUIContent("Gear Count", "Number of forward gears"),
             ReverseGearRatioFieldContent = new GUIContent("Reverse Gear Ratio", "Reverse gear's ratio"),
             FinalDriveRatioFieldContent = new GUIContent("Final Drive Ratio", "Final drive's ratio");
@@ -82,6 +83,8 @@ namespace Varneon.VUdon.VehiclesBase.DataPresets.Editor
                         specSheetData.EngineTorqueCurveKeyframes = engineTorqueCurve.keys;
                     }
                 }
+
+                specSheetData.TransmissionType = (TransmissionType)EditorGUILayout.EnumPopup(TransmissionTypeFieldContent, specSheetData.TransmissionType);
 
                 using (var gearCountChangedScope = new EditorGUI.ChangeCheckScope())
                 {
