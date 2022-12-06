@@ -49,6 +49,15 @@ namespace Varneon.VUdon.VehiclesBase.DataPresets
             }
         }
 
+        public string GetSpecSheetName()
+        {
+            JObject specSheet = JObject.Parse(rawJsonData);
+
+            string specSheetName = specSheet.Value<string>("Name");
+
+            return string.IsNullOrWhiteSpace(specSheetName) ? string.Format("<Unnamed> ({0})", name) : specSheetName;
+        }
+
         public string RawJsonData => rawJsonData;
 
         [SerializeField]
