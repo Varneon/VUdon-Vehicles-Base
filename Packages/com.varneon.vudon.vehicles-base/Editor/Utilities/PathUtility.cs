@@ -2,7 +2,7 @@
 using System.IO;
 using UnityEngine;
 
-namespace Varneon.VUdon.VehiclesBase.Editor
+namespace Varneon.VUdon.VehiclesBase.Editor.Utilities
 {
     public static class PathUtility
     {
