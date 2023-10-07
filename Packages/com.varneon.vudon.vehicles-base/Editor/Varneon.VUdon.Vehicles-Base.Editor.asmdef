@@ -1,7 +1,8 @@
 {
     "name": "Varneon.VUdon.Vehicles-Base.Editor",
     "references": [
-        "Varneon.VUdon.Vehicles-Base.Runtime"
+        "Varneon.VUdon.Vehicles-Base.Runtime",
+        "Varneon.V-Inspector.Editor"
     ],
     "includePlatforms": [
         "Editor"
