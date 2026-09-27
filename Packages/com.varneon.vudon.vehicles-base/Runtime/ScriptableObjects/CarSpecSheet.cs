@@ -73,6 +73,7 @@ namespace Varneon.VUdon.VehiclesBase.DataPresets
             /// <summary>
             /// Description of the car
             /// </summary>
+            [TextArea]
             public string Description = string.Empty;
 
             /// <summary>
@@ -88,37 +89,53 @@ namespace Varneon.VUdon.VehiclesBase.DataPresets
             /// <summary>
             /// Production year of the car
             /// </summary>
-            public int Year = 2022;
+            [Min(0)]
+            public int Year = 2026;
 
             /// <summary>
             /// Default operational weight of the car
             /// </summary>
+            [Min(1)]
             public float Weight = 1750f;
 
             /// <summary>
             /// Top speed of the car
             /// </summary>
+            [Min(1f)]
             public float TopSpeed = 200f;
+
+            /// <summary>
+            /// Model of the engine
+            /// </summary>
+            public string EngineModel = string.Empty;
 
             /// <summary>
             /// Idle RPM of the engine
             /// </summary>
+            [Min(1f)]
             public float IdleRPM = 1000f;
 
             /// <summary>
             /// Max RPM of the engine
             /// </summary>
+            [Min(2f)]
             public float MaxRPM = 7000f;
 
             /// <summary>
             /// Maximum torque of the engine in Nm
             /// </summary>
+            [Min(1f)]
             public float MaxEngineTorque = 400f;
 
             /// <summary>
             /// AnimationCurve keyframes for describing the engine's torque curve
             /// </summary>
             public Keyframe[] EngineTorqueCurveKeyframes;
+
+            /// <summary>
+            /// Model of the transmission
+            /// </summary>
+            public string TransmissionModel = string.Empty;
 
             /// <summary>
             /// Type of the transmission
@@ -128,6 +145,7 @@ namespace Varneon.VUdon.VehiclesBase.DataPresets
             /// <summary>
             /// Number of forward gears
             /// </summary>
+            [Min(1)]
             public int GearCount = 6;
 
             /// <summary>
@@ -138,11 +156,13 @@ namespace Varneon.VUdon.VehiclesBase.DataPresets
             /// <summary>
             /// Reverse gear's ratio
             /// </summary>
+            [Min(0.1f)]
             public float ReverseGearRatio = 5f;
 
             /// <summary>
             /// Final drive's ratio
             /// </summary>
+            [Min(0.1f)]
             public float FinalDriveRatio = 4f;
         }
     }
