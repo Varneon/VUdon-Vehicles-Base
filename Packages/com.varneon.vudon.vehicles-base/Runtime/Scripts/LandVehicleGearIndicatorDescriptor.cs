@@ -1,13 +1,17 @@
 ﻿using TMPro;
 using UnityEngine;
-using Varneon.VUdon.VehiclesBase.Interfaces;
+using Varneon.VUdon.VehiclesBase.Abstract;
 
 namespace Varneon.VUdon.VehiclesBase
 {
-    [RequireComponent(typeof(TextMeshPro))]
+    /// <summary>
+    /// Descriptor for defining a <see cref="TextMeshPro"/>-based gear indicator text that should be updated when the gear on the vehicle changes
+    /// </summary>
+    [AddComponentMenu(VehicleConstants.DESCRIPTOR_COMPONENT_ROOT_PATH + "Land Vehicle Gear Indicator")]
     [DisallowMultipleComponent]
-    [AddComponentMenu("VUdon/Vehicles/Descriptors/Land Vehicle Gear Indicator")]
-    public class LandVehicleGearIndicatorDescriptor : MonoBehaviour, IDestroyOnBuild { }
+    [ExcludeFromPreset]
+    [RequireComponent(typeof(TextMeshPro))] // TODO: Add support for TMP_Text
+    public class LandVehicleGearIndicatorDescriptor : LandVehicleObjectDescriptor { }
 
 #if UNITY_EDITOR && !COMPILER_UDONSHARP
     [UnityEditor.CustomEditor(typeof(LandVehicleGearIndicatorDescriptor))]
