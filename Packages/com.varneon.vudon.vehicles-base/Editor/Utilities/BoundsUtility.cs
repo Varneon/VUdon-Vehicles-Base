@@ -12,54 +12,57 @@ namespace Varneon.VUdon.VehiclesBase.Editor.Utilities
 
         public static Bounds CalculateRendererBounds(Transform root, LayerMask layers, bool ignoreWithoutMaterials = false)
         {
-            // Renderer.localBounds isn't available in 2019.4, this is why calculating the local bounds of the MeshRenderer requires the root to be moved to the scene's origin
-
-            Vector3 originalPosition = root.position;
-            Quaternion originalRotation = root.rotation;
-
-            root.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
-
             bool initialized = false;
 
             Bounds bounds = default;
 
-            foreach (MeshRenderer renderer in root.GetComponentsInChildren<MeshRenderer>(true))
+            Matrix4x4 worldToRootMatrix = root.worldToLocalMatrix;
+
+            foreach (MeshRenderer renderer in root.GetComponentsInChildren<MeshRenderer>())
             {
                 if(!IsLayerDefined(layers, renderer.gameObject.layer)) { continue; }
 
                 if(ignoreWithoutMaterials && renderer.sharedMaterials.Length == 0) { continue; }
 
+                Bounds localBounds = renderer.localBounds;
+
+                Transform rendererTransform = renderer.transform;
+
+                Matrix4x4 rendererToWorldMatrix = rendererTransform.localToWorldMatrix;
+
+                Matrix4x4 matrix = Matrix4x4.TRS(rendererTransform.position - root.position, Quaternion.Inverse(root.rotation) * rendererTransform.rotation, rendererTransform.lossyScale);
+
                 if(initialized)
                 {
-                    bounds.Encapsulate(renderer.bounds);
+                    EncapsulatePoints(ref bounds, GetBoundsCorners(localBounds, rendererToWorldMatrix, worldToRootMatrix));
                 }
                 else
                 {
-                    bounds = new Bounds(renderer.bounds.center, renderer.bounds.size);
+                    bounds = GetPointsBounds(GetBoundsCorners(localBounds, rendererToWorldMatrix, worldToRootMatrix));
 
                     initialized = true;
                 }
             }
 
-            foreach(SkinnedMeshRenderer renderer in root.GetComponentsInChildren<SkinnedMeshRenderer>(true))
+            foreach(SkinnedMeshRenderer renderer in root.GetComponentsInChildren<SkinnedMeshRenderer>())
             {
                 if (!IsLayerDefined(layers, renderer.gameObject.layer)) { continue; }
 
                 if (ignoreWithoutMaterials && renderer.sharedMaterials.Length == 0) { continue; }
 
+                Bounds localBounds = renderer.localBounds;
+
                 if (initialized)
                 {
-                    bounds.Encapsulate(renderer.localBounds);
+                    bounds.Encapsulate(localBounds);
                 }
                 else
                 {
-                    bounds = new Bounds(renderer.localBounds.center, renderer.localBounds.size);
+                    bounds = new Bounds(localBounds.center, localBounds.size);
 
                     initialized = true;
                 }
             }
-
-            root.SetPositionAndRotation(originalPosition, originalRotation);
 
             return bounds;
         }
@@ -119,5 +122,72 @@ namespace Varneon.VUdon.VehiclesBase.Editor.Utilities
         }
 
         private static bool IsLayerDefined(LayerMask mask, int layer) => (mask & (1 << layer)) != 0;
+
+        public static Bounds GetPointsBounds(params Vector3[] points)
+        {
+            Bounds bounds = new Bounds(points[0], Vector3.zero);
+
+            EncapsulatePoints(ref bounds, points);
+
+            return bounds;
+        }
+
+        public static void EncapsulatePoints(ref Bounds bounds, params Vector3[] points)
+        {
+            foreach(Vector3 point in points)
+            {
+                bounds.Encapsulate(point);
+            }
+        }
+
+        public static Vector3[] GetBoundsCorners(Bounds bounds, Matrix4x4 matrix, Matrix4x4 matrix2)
+        {
+            Vector3 c = bounds.center;
+            Vector3 e = bounds.extents;
+
+            float x = e.x;
+            float y = e.y;
+            float z = e.z;
+            float xn = -x;
+            float yn = -y;
+            float zn = -z;
+
+            return new Vector3[]
+            {
+                matrix2.MultiplyPoint(matrix.MultiplyPoint(c + e)),
+                matrix2.MultiplyPoint(matrix.MultiplyPoint(c + new Vector3(xn, y, z))),
+                matrix2.MultiplyPoint(matrix.MultiplyPoint(c + new Vector3(xn, yn, z))),
+                matrix2.MultiplyPoint(matrix.MultiplyPoint(c + new Vector3(xn, yn, zn))),
+                matrix2.MultiplyPoint(matrix.MultiplyPoint(c + new Vector3(x, yn, zn))),
+                matrix2.MultiplyPoint(matrix.MultiplyPoint(c + new Vector3(x, y, zn))),
+                matrix2.MultiplyPoint(matrix.MultiplyPoint(c + new Vector3(xn, y, zn))),
+                matrix2.MultiplyPoint(matrix.MultiplyPoint(c + new Vector3(x, yn, z)))
+            };
+        }
+
+        public static Vector3[] GetBoundsCorners(Bounds bounds, Matrix4x4 matrix)
+        {
+            Vector3 c = bounds.center;
+            Vector3 e = bounds.extents;
+
+            float x = e.x;
+            float y = e.y;
+            float z = e.z;
+            float xn = -x;
+            float yn = -y;
+            float zn = -z;
+
+            return new Vector3[]
+            {
+                matrix.MultiplyPoint(c + e),
+                matrix.MultiplyPoint(c + new Vector3(xn, y, z)),
+                matrix.MultiplyPoint(c + new Vector3(xn, yn, z)),
+                matrix.MultiplyPoint(c + new Vector3(xn, yn, zn)),
+                matrix.MultiplyPoint(c + new Vector3(x, yn, zn)),
+                matrix.MultiplyPoint(c + new Vector3(x, y, zn)),
+                matrix.MultiplyPoint(c + new Vector3(xn, y, zn)),
+                matrix.MultiplyPoint(c + new Vector3(x, yn, z))
+            };
+        }
     }
 }
