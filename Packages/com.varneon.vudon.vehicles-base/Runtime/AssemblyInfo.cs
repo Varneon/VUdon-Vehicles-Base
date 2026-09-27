@@ -2,3 +2,4 @@
 
 [assembly: InternalsVisibleTo("Varneon.VUdon.Vehicles-Base.Editor")]
 [assembly: InternalsVisibleTo("Varneon.VUdon.Vehicles-Lite.Editor")]
+[assembly: InternalsVisibleTo("Varneon.VUdon.Vehicles-Base-Staging.Editor")]
