@@ -1,12 +1,11 @@
 {
     "name": "Varneon.VUdon.Vehicles-Base.Runtime",
+    "rootNamespace": "Varneon.VUdon.VehiclesBase",
     "references": [
-        "UdonSharp.Runtime",
-        "VRC.Udon",
-        "Varneon.VUdon.EventDispatcher.Runtime",
-        "Varneon.VUdon.VisibilitySensors.Runtime",
-        "Varneon.VUdon.ArrayExtensions.Runtime",
-        "Unity.TextMeshPro"
+        "Cinemachine",
+        "Unity.TextMeshPro",
+        "Varneon.V-SDK.Runtime",
+        "Varneon.VUdon.Editors.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

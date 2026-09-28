@@ -1,8 +1,12 @@
 {
     "name": "Varneon.VUdon.Vehicles-Base.Editor",
+    "rootNamespace": "Varneon.VUdon.VehiclesBase.Editor",
     "references": [
-        "Varneon.VUdon.Vehicles-Base.Runtime",
-        "Varneon.V-Inspector.Editor"
+        "Cinemachine",
+        "Unity.TextMeshPro",
+        "Varneon.V-SDK.Runtime",
+        "Varneon.VUdon.Editors.Editor",
+        "Varneon.VUdon.Vehicles-Base.Runtime"
     ],
     "includePlatforms": [
         "Editor"

@@ -1,7 +1,7 @@
 using UnityEngine;
 using Varneon.VSDK;
-using Varneon.VUdon.Seats.Enums;
 using Varneon.VUdon.VehiclesBase.Abstract;
+using Varneon.VUdon.VehiclesBase.Enums;
 
 namespace Varneon.VUdon.VehiclesBase
 {
