@@ -21,10 +21,12 @@ namespace Varneon.VUdon.VehiclesBase.DataPresets.Editor
             YearFieldContent = new GUIContent("Year", "Production year of the car"),
             WeightFieldContent = new GUIContent("Weight", "Default operational weight of the car"),
             TopSpeedFieldContent = new GUIContent("Top Speed", "Top speed of the car (km/h)"),
+            EngineModelFieldContent = new GUIContent("Engine Model", "Model of the engine"),
             IdleRPMFieldContent = new GUIContent("Idle RPM", "Idle RPM of the engine"),
             MaxRPMFieldContent = new GUIContent("Max RPM", "Max RPM of the engine"),
             MaxEngineTorqueFieldContent = new GUIContent("Max Engine Torque", "Maximum torque of the engine in Nm"),
             EngineTorqueCurveFieldContent = new GUIContent("Engine Torque Curve", "Normalized torque curve of the engine"),
+            TransmissionModelFieldContent = new GUIContent("Transmission Model", "Model of the transmission"),
             TransmissionTypeFieldContent = new GUIContent("Transmission Type", "Type of the transmission"),
             GearCountFieldContent = new GUIContent("Gear Count", "Number of forward gears"),
             ReverseGearRatioFieldContent = new GUIContent("Reverse Gear Ratio", "Reverse gear's ratio"),
@@ -68,6 +70,8 @@ namespace Varneon.VUdon.VehiclesBase.DataPresets.Editor
 
                 specSheetData.TopSpeed = EditorGUILayout.FloatField(TopSpeedFieldContent, specSheetData.TopSpeed);
 
+                specSheetData.EngineModel = EditorGUILayout.TextField(EngineModelFieldContent, specSheetData.EngineModel);
+
                 specSheetData.IdleRPM = EditorGUILayout.FloatField(IdleRPMFieldContent, specSheetData.IdleRPM);
 
                 specSheetData.MaxRPM = EditorGUILayout.FloatField(MaxRPMFieldContent, specSheetData.MaxRPM);
@@ -83,6 +87,8 @@ namespace Varneon.VUdon.VehiclesBase.DataPresets.Editor
                         specSheetData.EngineTorqueCurveKeyframes = engineTorqueCurve.keys;
                     }
                 }
+
+                specSheetData.TransmissionModel = EditorGUILayout.TextField(TransmissionModelFieldContent, specSheetData.TransmissionModel);
 
                 specSheetData.TransmissionType = (TransmissionType)EditorGUILayout.EnumPopup(TransmissionTypeFieldContent, specSheetData.TransmissionType);
 
