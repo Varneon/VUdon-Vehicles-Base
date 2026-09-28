@@ -1,18 +1,16 @@
 {
   "name": "com.varneon.vudon.vehicles-base",
   "displayName": "VUdon - Vehicles - Base",
-  "version": "0.1.0-alpha.2",
-  "unity": "2019.4",
-  "unityRelease": "29f1",
-  "description": "Common vehicle assets, prefabs and editor scripts for VUdon - Vehicles (Lite & Full)",
+  "version": "0.1.0-alpha.5",
+  "unity": "2022.3",
+  "unityRelease": "22f1",
+  "description": "Common vehicle descriptors, assets, prefabs and editor scripts for VUdon - Vehicles (Lite & Full)",
   "author": {
     "name": "Varneon",
     "url": "https://github.com/Varneon"
   },
   "dependencies": {
-    "com.vrchat.udonsharp": "1.0.1"
-  },
-  "vpmDependencies": {
-    "com.vrchat.udonsharp": "1.x.x"
+    "com.unity.cinemachine": "2.9.7",
+    "com.unity.textmeshpro": "3.0.6"
   }
 }
