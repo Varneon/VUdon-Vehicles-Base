@@ -44,7 +44,7 @@ namespace Varneon.VUdon.VehiclesBase
 
 #if UNITY_EDITOR && !COMPILER_UDONSHARP
         [ContextMenu("Auto-Detect Mirrors")]
-        internal void AutoDetectMirrors()
+        public void AutoDetectMirrors()
         {
             UnityEditor.Undo.RecordObject(this, "Auto-Detect Mirrors");
 

@@ -1,6 +1,5 @@
 using UnityEngine;
 using Varneon.VUdon.VehiclesBase.Abstract;
-using Varneon.VUdon.VehiclesLite;
 
 namespace Varneon.VUdon.VehiclesBase
 {

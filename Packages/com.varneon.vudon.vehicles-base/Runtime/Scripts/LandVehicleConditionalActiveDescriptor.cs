@@ -40,7 +40,7 @@ namespace Varneon.VUdon.VehiclesBase
         /// <summary>
         /// Applies the initial active state by negating the desired active state on condition
         /// </summary>
-        internal void Initialize()
+        public void Initialize()
         {
             gameObject.SetActive(!ActiveOnCondition);
         }
