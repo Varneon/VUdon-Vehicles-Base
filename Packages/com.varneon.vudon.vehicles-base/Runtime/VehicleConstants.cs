@@ -69,6 +69,6 @@
             INPUT_AXIS_OCULUS_CROSSPLATFORM_PRIMARYINDEXTRIGGER = "Oculus_CrossPlatform_PrimaryIndexTrigger";
 
         public const string
-            DESCRIPTOR_COMPONENT_ROOT_PATH = "VUdon/Vehicles/Descriptors/";
+            DESCRIPTOR_COMPONENT_ROOT_PATH = "VUdon/Vehicles/Base/";
     }
 }
