@@ -1,0 +1,554 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 745a586557192f74db432d505d4a10a5, type: 3}
+  m_Name: RES_german_1900_TDI_MQ
+  m_EditorClassIdentifier: 
+  Name: RES_german_1900_TDI_MQ
+  Description: Original german_1900_TDI_MQ preset from Realistic Engine Sound
+  IdleClip: {fileID: 8300000, guid: 19043d2dd976b0d4aadf62dd45d1c4c9, type: 3}
+  IdleVolumeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 97.31263
+      outSlope: 97.31263
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.010284942
+      value: 1.0008547
+      inSlope: -0.0052357065
+      outSlope: -0.0052357065
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.080826506
+      value: 1
+      inSlope: 0.0017014041
+      outSlope: 0.0017014041
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.35567003
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.2499707
+      value: 0
+      inSlope: -10.866042
+      outSlope: -10.866042
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.04515669
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  IdlePitchCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.0024337769
+      value: 0.9370117
+      inSlope: 0.55399084
+      outSlope: 0.55399084
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.098586805
+      value: 0.9902796
+      inSlope: 0.59388375
+      outSlope: 0.59388375
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.11001236
+      value: 0.99752086
+      inSlope: 0.7003206
+      outSlope: 0.7003206
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.13337956
+      value: 1.0154403
+      inSlope: 0.8300573
+      outSlope: 0.8300573
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.15955076
+      value: 1.0388178
+      inSlope: 0.9434713
+      outSlope: 0.9434713
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1791478
+      value: 1.0582912
+      inSlope: 0.95636636
+      outSlope: 0.95636636
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.19441837
+      value: 1.0723255
+      inSlope: 0.75812215
+      outSlope: 0.75812215
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9963379
+      value: 1.5512352
+      inSlope: 0.5972042
+      outSlope: 0.5972042
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  OnLoadClips:
+  - {fileID: 8300000, guid: 05df02af9b19fa4469d85076dcfde65f, type: 3}
+  - {fileID: 8300000, guid: f88b28535d0b8884bb60cc8cba8f992f, type: 3}
+  - {fileID: 8300000, guid: 10520b65d3ba1824eac762d9b1cba34e, type: 3}
+  OffLoadClips:
+  - {fileID: 8300000, guid: 784ef57d46e6bd84ea28b29cd2292ad8, type: 3}
+  - {fileID: 8300000, guid: 9d97dcffbaba2f940b74ec0320fa65a2, type: 3}
+  - {fileID: 8300000, guid: a566c63996832c6468605c1a8f2f8941, type: 3}
+  VolumeCurves:
+  - serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.12
+      value: 0
+      inSlope: 7.3360286
+      outSlope: 7.3360286
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.112367935
+    - serializedVersion: 3
+      time: 0.30699334
+      value: 1.0066124
+      inSlope: -0.0016040944
+      outSlope: -0.0016040944
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.3275356
+      value: 1.0081822
+      inSlope: -0.2894902
+      outSlope: -0.2894902
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.12723085
+    - serializedVersion: 3
+      time: 0.5
+      value: 0
+      inSlope: -5.701256
+      outSlope: -5.701256
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.10404713
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  - serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.3
+      value: 0
+      inSlope: 8.149431
+      outSlope: 8.149431
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.047563396
+    - serializedVersion: 3
+      time: 0.5744864
+      value: 1.000339
+      inSlope: 0.0032577713
+      outSlope: 0.0032577713
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.05488844
+    - serializedVersion: 3
+      time: 0.6241959
+      value: 1.0024767
+      inSlope: 0.0025681083
+      outSlope: 0.0025681083
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.27851406
+    - serializedVersion: 3
+      time: 0.8
+      value: 0
+      inSlope: -5.443693
+      outSlope: -5.443693
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.11968579
+      outWeight: 0.21099505
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  - serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.8700226
+      value: 0
+      inSlope: 12.676806
+      outSlope: 12.676806
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.05557817
+    - serializedVersion: 3
+      time: 0.9598576
+      value: 0.9976067
+      inSlope: -0.0041174246
+      outSlope: -0.0041174246
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13418567
+      outWeight: 0.5193791
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.059620358
+      outSlope: 0.059620358
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  PitchCurves:
+  - serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 1.4325585
+      outSlope: 1.4325585
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.0028076
+      value: 1.9365807
+      inSlope: 1.4325585
+      outSlope: 1.4325585
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  - serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.0048713684
+      value: 0.46690673
+      inSlope: 0.8132367
+      outSlope: 0.8132367
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.0015869
+      value: 1.2774724
+      inSlope: 0.8132367
+      outSlope: 0.8132367
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  - serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  AggrOnClip: {fileID: 8300000, guid: c05f08d527b457242af32e689b2d80df, type: 3}
+  AggrOffClip: {fileID: 8300000, guid: 7a64ad0ebd6d02948abb5bc50843c70f, type: 3}
+  AggrVolumeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.4
+      value: 0
+      inSlope: 2.2177465
+      outSlope: 2.2177465
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.13038005
+    - serializedVersion: 3
+      time: 0.8989883
+      value: 0.99999976
+      inSlope: 0.035946824
+      outSlope: 0.035946824
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.104447804
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.0054789316
+      outSlope: 0.0054789316
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.31676397
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  AggrPitchCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 0.43899247
+      outSlope: 0.43899247
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.646693
+      value: 0.78389335
+      inSlope: 0.44298017
+      outSlope: 0.44298017
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.65836674
+      value: 0.78911114
+      inSlope: 0.46320915
+      outSlope: 0.46320915
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.7704027
+      value: 0.84282684
+      inSlope: 0.46846157
+      outSlope: 0.46846157
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.7814001
+      value: 0.84785783
+      inSlope: 0.4708201
+      outSlope: 0.4708201
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.8942996
+      value: 0.9025201
+      inSlope: 0.48914593
+      outSlope: 0.48914593
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9030949
+      value: 0.9068661
+      inSlope: 0.69727314
+      outSlope: 0.69727314
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.99412155
+      inSlope: 0.9004218
+      outSlope: 0.9004218
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  RedlineClip: {fileID: 8300000, guid: 0705644b801999e408bcba9ffc97a5ea, type: 3}
+  RedlineVolumeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.98844737
+      value: 0
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9893535
+      value: 1
+      inSlope: 2.2912674
+      outSlope: 2.2912674
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  OnLoadRPMVolume:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.000030517578
+      value: 0.24309082
+      inSlope: 0.03631981
+      outSlope: 0.03631981
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.092710465
+    - serializedVersion: 3
+      time: 0.5648567
+      value: 0.58428454
+      inSlope: 1.4982238
+      outSlope: 1.4982238
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.04960475
+      outWeight: 0.17299543
+    - serializedVersion: 3
+      time: 0.7737832
+      value: 0.92062575
+      inSlope: 1.094928
+      outSlope: 1.094928
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13471769
+      outWeight: 0.24715073
+    - serializedVersion: 3
+      time: 1
+      value: 1.0049438
+      inSlope: -0
+      outSlope: -0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13769868
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  OffLoadRPMVolume:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.2
+      inSlope: 0.02232407
+      outSlope: 0.02232407
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.10296828
+    - serializedVersion: 3
+      time: 0.69297135
+      value: 0.41587287
+      inSlope: 0.88558125
+      outSlope: 0.88558125
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.13191693
+    - serializedVersion: 3
+      time: 0.9727976
+      value: 0.546759
+      inSlope: 0.000044846816
+      outSlope: 0.000044846816
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.042029947
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  StartClip: {fileID: 8300000, guid: 9ff99ed4c0bcfa54da8a8ad5e91b50eb, type: 3}
+  StopClip: {fileID: 8300000, guid: 371d2e62aef2e3e4ea1c59d893f88f31, type: 3}
